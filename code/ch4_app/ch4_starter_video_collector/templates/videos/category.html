@@ -7,6 +7,7 @@
             <h1>{{ category.category }}</h1>
         </div>
 
+
     </div>
 
     <div class="container videos category">
@@ -40,6 +41,23 @@
         {% endfor %}
     </div>
 
+    <div class="container add-video category">
+        <div class="row click-to-add">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form class="video-form fade-me-in fade-me-out" action="/videos/add{{ category.category }}"
+                      method="POST">
+                    <input type="text" class="form-control" name="id" placeholder="YouTube ID" required>
+                    <input type="text" class="form-control" name="title" placeholder="Video Title" required>
+                    <input type="text" class="form-control" name="author" placeholder="Video Author" required>
+                    <input type="text" class="form-control" name="View Count" placeholder="Video View Count" required>
+
+                    <button class="btn btn-danger" type="submit">Create</button>
+                    >
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
 
 {% endblock %}
 
